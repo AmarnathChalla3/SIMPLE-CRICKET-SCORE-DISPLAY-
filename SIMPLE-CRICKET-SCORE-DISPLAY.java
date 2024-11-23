@@ -2,7 +2,7 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class CSD4 extends JFrame {
+public class SIMPLE_CRICKET_SCORE_DISPLAY extends JFrame {
     // Variables for tracking score
     private int totalRuns = 0, totalWickets = 0, ballsBowled = 0;
     private int oversLimit = 20 * 6; // Default to 20 overs (in balls)
@@ -21,7 +21,7 @@ public class CSD4 extends JFrame {
     private JButton setCustomOversButton; // Button to set custom overs
     private JButton resetButton; // Reset button
 
-    public CSD4() {
+    public SIMPLE_CRICKET_SCORE_DISPLAY() {
         // Setting up the main window
         setTitle("Cricket Score App");
         setSize(700, 600);
@@ -171,9 +171,7 @@ public class CSD4 extends JFrame {
         displayPanel.add(oversField);
         displayPanel.add(inningsLabel);
         displayPanel.add(inningsField);
-
         add(displayPanel);
-
         // Bottom Panel for Innings Display and Reset Button
         JPanel inningsPanel = new JPanel();
         inningsPanel.setBounds(10, 460, 670, 80);
@@ -204,7 +202,7 @@ public class CSD4 extends JFrame {
         });
 
         fiftyOversRadio.addActionListener(e -> {
-            oversLimit = 50 * 6; // 50 overs
+            oversLimit = 50 * 6; //50 Overs
             twentyOversRadio.setEnabled(true);
             fiftyOversRadio.setEnabled(true);
         });
@@ -229,7 +227,7 @@ public class CSD4 extends JFrame {
 
     private void addWicket() {
         totalWickets++;
-        ballsBowled++; // Ensure ball count increases when a wicket falls
+        ballsBowled++; 
         checkOversOrWickets();
         updateDisplay();
     }
@@ -282,9 +280,8 @@ public class CSD4 extends JFrame {
         ballsBowled = 0;
         currentInnings = 1;
         firstInningsScore = 0;
-        oversLimit = 20 * 6; // Reset to default 20 overs
-
-        // Reset UI fields
+        oversLimit = 20 * 6;
+        
         runsField.setText("0");
         wicketsField.setText("0");
         oversField.setText("0.0");
@@ -296,6 +293,6 @@ public class CSD4 extends JFrame {
         customOversField.setText("");
     }
     public static void main(String[] args) {
-        new CSD4();
+        new SIMPLE_CRICKET_SCORE_DISPLAY();
     }
 }
